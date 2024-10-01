@@ -1,0 +1,121 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    transition: background 0.3s ease;
+}
+
+.app-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.app-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+#city-input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#city-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+#search-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#suggestions {
+    position: absolute;
+    width: 310px;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    z-index: 100;
+    display: none;
+    top: 85px;
+    left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#suggestions div:hover {
+    background-color: #e0e0e0;
+}
+
+.weather-info {
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.weather-info h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.weather-info p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Temperature-based background colors for the entire body */
+.cold {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.cool {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+}
+
+.warm {
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+.hot {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
